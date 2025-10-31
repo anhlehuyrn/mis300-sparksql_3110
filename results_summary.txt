@@ -1,0 +1,64 @@
+Task 1.1 purchase_conversion_rate: 25.29%
+Task 1.2 category_clicks:
+  电子产品: 1097160
+  服装: 1095546
+  食品: 1094720
+  美妆: 1094213
+  家居: 1094052
+Task 1.3 hourly_behavior:
+  None: 1
+  00: 411964
+  01: 416002
+  02: 416873
+  03: 416955
+  04: 417281
+  05: 416181
+  06: 416927
+  07: 417071
+  08: 416753
+  09: 416446
+  10: 417176
+  11: 417996
+  12: 415724
+  13: 417091
+  14: 416775
+  15: 415955
+  16: 417031
+  17: 417007
+  18: 416656
+  19: 417165
+  20: 419000
+  21: 416955
+  22: 416864
+  23: 416152
+Task 2.1 top3_buy_users:
+  u159534: 32
+  u161061: 31
+  u165792: 31
+Task 2.2 funnel_conversion:
+  click_to_collect: 99.08%
+  collect_to_cart: 98.93%
+  cart_to_buy: 79.85%
+  overall_conversion: 78.28%
+Task 2.3 item_repurchase_top10:
+  item i406351: rate 6.25% (repurchase 1/total 16)
+  item i309562: rate 5.56% (repurchase 1/total 18)
+  item i307997: rate 5.26% (repurchase 1/total 19)
+  item i207835: rate 5.26% (repurchase 1/total 19)
+  item i505533: rate 5.0% (repurchase 1/total 20)
+  item i608713: rate 4.76% (repurchase 1/total 21)
+  item i404704: rate 4.76% (repurchase 1/total 21)
+  item i204769: rate 4.76% (repurchase 1/total 21)
+  item i502824: rate 4.76% (repurchase 1/total 21)
+  item i300050: rate 4.76% (repurchase 1/total 21)
+Task 2.4 day2_retention_last10:
+  2023-11-30: active 78284, retained 61456, rate 78.5%
+  2023-11-29: active 78226, retained 61407, rate 78.5%
+  2023-11-28: active 78290, retained 61533, rate 78.6%
+  2023-11-27: active 78294, retained 61306, rate 78.3%
+  2023-11-26: active 78122, retained 61393, rate 78.59%
+  2023-11-25: active 78299, retained 61308, rate 78.3%
+  2023-11-24: active 78061, retained 61200, rate 78.4%
+  2023-11-23: active 78146, retained 61182, rate 78.29%
+  2023-11-22: active 78023, retained 61268, rate 78.53%
+  2023-11-21: active 78333, retained 61390, rate 78.37%
