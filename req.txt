@@ -1,0 +1,41 @@
+Spark SQL Experiment: E-commerce User Behavior Analysis
+
+1. Experimental objectives  
+1. Master the core syntax of Spark SQL ('SELECT'/'GROUP BY'/'WINDOW'/conditional aggregation, etc.) and understand the logic of structured data processing.  
+2. Compare the differences between Spark RDD and Spark SQL, and experience the simplicity advantages of SQL for "structured analysis scenarios".  
+3. Based on e-commerce user behavior data, use Spark SQL to complete basic statistics and advanced analysis, and output actionable business conclusions.  
+
+2. Environment preparation and data loading  
+1. Environment Preparation (Reuse the original foundation, supplement SQL configuration)  
+- Spark, Python environment installed.  
+- Make sure the 'pyspark' library is installed (consistent with the Spark version, e.g. 'pip install pyspark==3.0.1').  
+
+2. Spark SQL Data Loading and View Creation (Core Steps)  
+Loading CSV data via Spark SQL and creating temporary views (for subsequent SQL queries) is all about defining strict schemas to improve efficiency
+  
+
+3. Core tasks (Spark SQL implementation)  
+All tasks are executed via 'spark.sql ('SQL statement'), and the results are saved to the 'output' folder, which supports csv format.  
+
+Fundamental Analysis (Required)  
+Task 1.1: Count the total number of 4 behaviors + calculate the purchase conversion rate 
+Task objective: Clarify the distribution of each behavior (click/favorite/add/purchase) and quantify the core conversion efficiency of "click→purchase".  
+Pseudocode:
+1. From the temporary view user_behavior_view, group by action field, use COUNT(*) to count the total number of times of each behavior, sort in descending order of the total number of times, and create a temporary view action_count_view; 
+2. From the action_count_view, extract the total number of action = 'buy' and the total number of action = 'click' respectively through sub-query, and calculate the purchase conversion rate by "(number of purchases / clicks)×100", keeping 2 decimal places; 
+3. Save the action_count_view result to the specified path, and the terminal outputs the conversion rate result. 
+ 
+Task 1.2: Analyze the popularity of product categories (in descending order of clicks). 
+Task objective: Identify the most popular product categories and provide a basis for "category operation".  
+Pseudocode:
+1. From the temporary view user_behavior_view, filter the behavior data for action = 'click';
+2. Group by category field, use COUNT(*) to count the number of clicks in each category, sort them in descending order of clicks, and create a temporary view category_click_view;
+3. Save the category_click_view results to the specified path, and you can output the first N data to view popular categories.
+
+Task 1.3: Analyze the active period of the user (the number of behaviors by hour). 
+Task objectives: Identify the peak activity of users in the day, and guide "limited-time promotions" and "customer service scheduling".  
+Pseudocode:  
+1. From the temp view user_behavior_view, use a time function to convert the timestamp (Unix timestamp) to an 'hour' format (e.g., FROM_UNIXTIME(timestamp, 'HH'));
+2. Group according to the converted "Hours" field, use COUNT(*) to count the total number of actions for each hour, sort them in ascending order of hours, and create a temporary view hourly_behavior_view.
+3. Save the hourly_behavior_view results to the specified path, and filter the time period with the highest number of behaviors as the active peak.
+
